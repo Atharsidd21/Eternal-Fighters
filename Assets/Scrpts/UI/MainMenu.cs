@@ -9,9 +9,13 @@ public class MainMenu : MonoBehaviour
     public GameObject SelectCharacterAndStageMenu;
     public GameObject optionMenu;
     public GameObject controlMenu;
+    public GameObject Background1;
+    public GameObject Background2;
 
     void Start()
     {
+        Background1.SetActive(true);
+        Background2.SetActive(false);
         mainMenu.SetActive(true);
         SelectCharacterAndStageMenu.SetActive(false);
         optionMenu.SetActive(false);
@@ -20,16 +24,23 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButtonClicked()
     {
+         Background1.SetActive(false);
+        Background2.SetActive(true);
         mainMenu.SetActive(false);
         SelectCharacterAndStageMenu.SetActive(true);
+      
     }
     public void OptionButtonClicked()
     {
+         Background1.SetActive(false);
+        Background2.SetActive(true);
          mainMenu.SetActive(false);
         optionMenu.SetActive(true);
     }
      public void ControlsButtonClicked()
     {
+         Background1.SetActive(false);
+        Background2.SetActive(true);
          optionMenu.SetActive(false);
         controlMenu.SetActive(true);
     }
@@ -40,6 +51,8 @@ public class MainMenu : MonoBehaviour
     }
     public void BackButtonClicked()
     {
+         Background1.SetActive(true);
+        Background2.SetActive(false);
          mainMenu.SetActive(true);
         SelectCharacterAndStageMenu.SetActive(false);
         optionMenu.SetActive(false);

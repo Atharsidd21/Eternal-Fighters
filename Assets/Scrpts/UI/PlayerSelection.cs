@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerSelection : MonoBehaviour
 {
     public GameObject Players;
     private GameObject[] allCharacters;
+  
     private int currentIndex = 0;
     void Start()
     {
@@ -14,7 +16,8 @@ public class PlayerSelection : MonoBehaviour
        for (int i = 0; i< Players.transform.childCount;i++)
        {
         allCharacters[i]  = Players.transform.GetChild(i).gameObject;
-        allCharacters[i].SetActive(false); 
+        allCharacters[i].SetActive(false);
+        
        }
        if(PlayerPrefs.HasKey("SelectedCharacterIndex"))
        {
@@ -28,8 +31,10 @@ public class PlayerSelection : MonoBehaviour
         foreach(GameObject character in allCharacters)
         {
             character.SetActive(false);
+           
         }
         allCharacters[currentIndex].SetActive(true);
+  
     }
     public void NextCharacter()
     {
